@@ -28,7 +28,8 @@ public class MQTTHelper {
     final String []subscriptionTopic = {
             "phamdinhtrung/feeds/iot-led",
             "phamdinhtrung/feeds/iot-pump",
-            "phamdinhtrung/feeds/iot-temp"
+            "phamdinhtrung/feeds/iot-temp",
+            "phamdinhtrung/feeds/iot-humid",
     };
     final int []qos = {0,0,0};
 
