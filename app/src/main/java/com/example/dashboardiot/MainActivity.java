@@ -94,8 +94,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        Http testAPI = new Http();
-        testAPI.execute();
+        HttpLed HttpLed = new HttpLed();
+        HttpLed.execute();
+
+        HttpPump HttpPump = new HttpPump();
+        HttpPump.execute();
 
         btnLED.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

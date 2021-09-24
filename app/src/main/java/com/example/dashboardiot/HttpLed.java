@@ -19,7 +19,7 @@ import java.net.URL;
  * Created by Admin on 9/13/2021.
  */
 
-public class Http extends AsyncTask<Void, Void, Void> {
+public class HttpLed extends AsyncTask<Void, Void, Void> {
     String data;
     @Override
     protected Void doInBackground(Void... voids) {
