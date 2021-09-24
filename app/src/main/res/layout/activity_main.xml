@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtTemperature"
+
+        android:background="#ff0000"
+        android:gravity="center"
+        android:text="32°C"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_heightPercent="25%"
+        app:layout_widthPercent="35%"
+        app:layout_marginLeftPercent="10%"
+        app:layout_marginTopPercent="10%" />
+
+    <TextView
+        android:id="@+id/txtHumidity"
+        android:background="#0b63e5"
+        android:gravity="center"
+        android:text="50%"
+        android:textColor="#ffffff"
+
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_heightPercent="25%"
+        app:layout_widthPercent="35%"
+        app:layout_marginLeftPercent="55%"
+        app:layout_marginTopPercent="10%" />
+
+    <ToggleButton
+        android:id="@+id/btnLED"
+        android:background="@drawable/toggle_selector"
+        android:checked="true"
+        android:text="LED"
+        android:textOff=""
+        android:textOn=""
+
+        app:layout_heightPercent="20%"
+        app:layout_widthPercent="60%"
+        app:layout_marginLeftPercent="20%"
+        app:layout_marginTopPercent="50%" />
+
+    <ImageView
+        android:src="@drawable/bk"
+        android:scaleType="fitCenter"
+        app:layout_heightPercent="10%"
+        app:layout_widthPercent="10%"
+        app:layout_marginLeftPercent="0%"
+        app:layout_marginTopPercent="90%" />
+
+    <TextView
+        android:text="Dashboard IoT Demo"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:textColor="#0000ff"
+
+        app:layout_heightPercent="10%"
+        app:layout_widthPercent="90%"
+        app:layout_marginLeftPercent="10%"
+        app:layout_marginTopPercent="90%" />
+
+    <ImageView
+        android:src="@drawable/icon_temp"
+        app:layout_heightPercent="7%"
+        app:layout_widthPercent="35%"
+        app:layout_marginLeftPercent="10%"
+        app:layout_marginTopPercent="10%" />
+
+    <ImageView
+        android:src="@drawable/icon_drop"
+        app:layout_heightPercent="7%"
+        app:layout_widthPercent="35%"
+        app:layout_marginLeftPercent="55%"
+        app:layout_marginTopPercent="10%" />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/spin_kit"
+        style="@style/SpinKitView.Large.FadingCircle"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:SpinKit_Color="#0b63e5"
+
+        app:layout_heightPercent="10%"
+        app:layout_widthPercent="40%"
+        app:layout_marginLeftPercent="30%"
+        app:layout_marginTopPercent="75%"
+        />
+
+</androidx.percentlayout.widget.PercentRelativeLayout>
+
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent">-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/ver50"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="205dp"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintGuide_percent="0.5" />-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/hor50"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_percent="0.5" />-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/hor75"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_percent="0.75" />-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/hor10"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_percent="0.1" />-->
+
+<!--    -->
+<!--    &lt;!&ndash;    <TextView&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:id="@+id/textView3"&ndash;&gt;-->
+
+<!--    &lt;!&ndash;        app:layout_constraintTop_toTopOf="parent"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:layout_constraintBottom_toTopOf="@+id/hor50"&ndash;&gt;-->
+
+<!--    &lt;!&ndash;        app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:layout_constraintStart_toStartOf="@+id/ver50"&ndash;&gt;-->
+
+<!--    &lt;!&ndash;        android:background="#ff0000"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:gravity="center"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:text="32°C"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:textColor="#ffffff"&ndash;&gt;-->
+
+<!--    &lt;!&ndash;        android:textSize="30sp"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:textStyle="bold"/>&ndash;&gt;-->
+
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
