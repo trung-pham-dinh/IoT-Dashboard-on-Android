@@ -145,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
                         else {
                             tempTimer.stop = true;
                             tempTimer.buffer.remove();
+                            spin.setVisibility(View.INVISIBLE);
 
                             if(tempTimer.buffer.isEmpty() == false) { // send remain data in queue
                                 tempTimer.init();
@@ -179,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
                     txtTemp.setText(message.toString()+"°C");
                 }
                 if(topic.contains("iot-led")) {
-                    if(message.toString().equals(dictFeed.get("iot-led").buffer.peek())) {
+                    if(message.toString().equals(dictFeed.get("iot-led").buffer.peek())) { // validate a response by check with queue's front
                         Log.d("Mqtt", "Button's state is sent successfully");
                         dictFeed.get("iot-led").buffer.remove();
                         dictFeed.get("iot-led").stop = true;
@@ -189,14 +190,13 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                         spin.setVisibility(View.INVISIBLE);
-                        if(message.toString().equals("1") ) {
-                            btnLED.setChecked(true);
-                        }
-                        else {
-                            btnLED.setChecked(false);
-                        }
                     }
-
+                    if(message.toString().equals("1") ) { // update the button on app
+                        btnLED.setChecked(true);
+                    }
+                    else {
+                        btnLED.setChecked(false);
+                    }
                 }
             }
 
