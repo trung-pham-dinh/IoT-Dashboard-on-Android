@@ -31,7 +31,7 @@ public class MQTTHelper {
             "phamdinhtrung/feeds/iot-temp",
             "phamdinhtrung/feeds/iot-humid",
     };
-    final int []qos = {0,0,0};
+    final int []qos = {0,0,0,0};
 
     final String username = "phamdinhtrung";
     final String password = "aio_DNZB93UIb5X0iR6vDhD8EIteXdxd";

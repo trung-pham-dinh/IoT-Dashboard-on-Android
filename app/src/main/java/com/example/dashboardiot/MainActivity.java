@@ -25,7 +25,7 @@ import java.util.TimerTask;
 
 class MyTimer {
     static int NumberOfFeeds = 2;
-    static int MaxRepeat = 3;
+    static int MaxRepeat = 3+1;
 
     public int counter = 0;
     public boolean againflag = false;
@@ -186,11 +186,18 @@ public class MainActivity extends AppCompatActivity {
                             sendDataMQTT("phamdinhtrung/feeds/" + feeds[i], tempTimer.buffer.peek());
                         }
                         else {
+                            Log.d("Mqtt", "Stop sending again");
                             tempTimer.stop = true;
-                            tempTimer.buffer.remove();
-                            spin.setVisibility(View.INVISIBLE);
 
-                            if(tempTimer.buffer.isEmpty() == false) { // send remain data in queue
+                            runOnUiThread(new Runnable() { // https://stackoverflow.com/questions/37689903/animators-may-only-be-run-on-looper-threads-android/40508143
+                                @Override
+                                public void run() {
+                                    spin.setVisibility(View.INVISIBLE);
+                                }
+                            });
+
+                            tempTimer.buffer.poll();
+                            if(tempTimer.buffer.isEmpty() == false) {
                                 tempTimer.init();
                             }
                         }
